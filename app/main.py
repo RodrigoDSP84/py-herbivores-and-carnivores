@@ -22,13 +22,12 @@ class Animal:
             f"Hidden: {self.hidden}}}"
         )
 
+    def __str__(self) -> str:
+        return str(Animal.alive)
+
     def die(self) -> None:
         if self.health <= 0 and self in Animal.alive:
             Animal.alive.remove(self)
-
-    @classmethod
-    def __str__(cls) -> str:
-        return str(cls.alive)
 
 
 class Herbivore(Animal):
